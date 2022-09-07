@@ -18,3 +18,15 @@ Haskell: Nothing
 Python, Rust, Scala: None
 Julia: nothing
 Nim: none(int) (See options)'''
+
+
+def first_non_consecutive(arr):
+    notConsecutive = False
+    for num in arr:
+        if num != num + 1:
+            notConsecutive = True
+            break
+    return None if notConsecutive == True else num
+
+
+first_non_consecutive()
