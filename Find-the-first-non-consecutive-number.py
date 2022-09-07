@@ -26,7 +26,10 @@ def first_non_consecutive(arr):
         if num != num + 1:
             notConsecutive = True
             break
-    return None if notConsecutive == True else num
+    if notConsecutive:
+        return num
+    else:
+        return None
 
 
 first_non_consecutive()
