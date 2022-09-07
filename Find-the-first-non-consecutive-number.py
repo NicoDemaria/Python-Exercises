@@ -21,15 +21,18 @@ Nim: none(int) (See options)'''
 
 
 def first_non_consecutive(arr):
-    notConsecutive = False
+    if len(arr) == 0:
+        return None
+    elif len(arr) == 1:
+        return None
+    else:
+        for i in range(len(arr) - 1):
+            if arr[i + 1] - arr[i] != 1:
+                return arr[i + 1]
+        return None
     for num in arr:
         if num != num + 1:
-            notConsecutive = True
-            break
-    if notConsecutive:
-        return num
-    else:
-        return None
+            return num
 
 
 first_non_consecutive()
