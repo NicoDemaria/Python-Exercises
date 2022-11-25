@@ -25,7 +25,7 @@ Remarks:
 if a result in seconds is ab.xy... it will be given truncated as ab.
 if the given string is "" you will return ""
 
-
+https://www.codewars.com/kata/55b3425df71c1201a800009c/train/python
 '''
 
 
