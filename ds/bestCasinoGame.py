@@ -7,7 +7,7 @@ You will get a tuple containing instances of namedtuple Game. Each instance of G
 
 Example Game instance:
 
-g1 = Game("Breakeven Steven", ((0.5, 20), (0.5, -20)))
+g1 = Game("Breakeven Steven", ((0.5, 20), (0.5, -22)))
 
 For each outcome (inner tuple), the first value represent the probability of occurrence while the second value represent the reward. In the above example there is a 50% chance of winning 20, and 50% chance of losing 20.
 
@@ -33,6 +33,23 @@ find_best_game((g1, g2)) # => "Breakeven Steven"
 Breakeven Steven has a higher EV than Go big or go home (0 vs -0.1) and therefore the function should return that name.
 https://www.codewars.com/kata/5dfd129673aa2c002591f65d/train/python'''
 
+g1 = ('Breakeven Steven', ((0.5, 20), (0.5, -20)))
+g2 = ('Go big or go home', ((0.99, -10), (0.01, 980)))
+games = g1, g2
+ev = 0
+prueba = list()
+
 
 def find_best_game(games):
-    pass
+    evMax = -10000000000000
+    nombres = games[0][0]
+
+    for Game in games:
+        ev = 0
+        for i in range(0, len(Game[1])):
+            ev += Game[1][i][0] * Game[1][i][1]
+        if evMax > ev:
+            evMax = ev
+            nombres = Game[0]
+
+    return nombres
