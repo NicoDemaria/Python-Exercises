@@ -48,7 +48,7 @@ def find_best_game(games):
         ev = 0
         for i in range(0, len(Game[1])):
             ev += Game[1][i][0] * Game[1][i][1]
-        if evMax > ev:
+        if ev > evMax:
             evMax = ev
             nombres = Game[0]
 
