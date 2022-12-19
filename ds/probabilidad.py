@@ -21,7 +21,12 @@ https://www.codewars.com/kata/5b02ae6aa2afd8f1b4001ba4/train/python
 
 '''
 
+'''
+'''
+
 
 def get_chance(n, x, a):
-
-    return 0
+    res = 1
+    for i in range(a):
+        res *= (n-i-x) / (n-i)
+    return round(res, 2)
