@@ -1,0 +1,11 @@
+Sí, aquí te presento algunos proyectos Open Source con "good first issue" que utilizan Python:
+
+Flask: un framework web ligero y flexible para Python. Repositorio: https://github.com/pallets/flask
+Requests: una librería HTTP para Python. Repositorio: https://github.com/psf/requests
+Matplotlib: una biblioteca de visualización de datos para Python. Repositorio: https://github.com/matplotlib/matplotlib
+Pandas: una biblioteca de análisis de datos para Python. Repositorio: https://github.com/pandas-dev/pandas
+Scikit-learn: una biblioteca de aprendizaje automático para Python. Repositorio: https://github.com/scikit-learn/scikit-learn
+Django: un framework web de alto nivel y de propósito general para Python. Repositorio: https://github.com/django/django
+PyTorch: una biblioteca de aprendizaje automático de código abierto para Python. Repositorio: https://github.com/pytorch/pytorch
+NumPy: una biblioteca de Python para computación científica con soporte para arreglos y matrices grandes y multidimensionales. Repositorio: https://github.com/numpy/numpy
+Estos proyectos tienen etiquetas "good first issue" en sus repositorios de GitHub, lo que significa que tienen problemas o tareas específicas que están diseñadas para que los nuevos contribuyentes se involucren en el proyecto.
