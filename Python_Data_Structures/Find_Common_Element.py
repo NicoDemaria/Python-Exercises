@@ -8,4 +8,4 @@ for numA in a:
             commonNumbers.append(numA)
         
         
-print(commonNumbers)   
+print(commonNumbers)    
