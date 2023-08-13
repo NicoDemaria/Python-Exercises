@@ -1,0 +1,54 @@
+SELECT
+	A.MANDT "SAPClient"
+	, A.VBELN "BillingDocument"
+	,COALESCE(B.BELNR,C.VBELV) "AccountingDocument"
+	, B.BLDAT "DocumentDate"
+	, B.BUDAT "AccountingDate "
+	, COALESCE(B.GJAHR,D.GJAHR) "FiscalYear"
+	, COALESCE(B.BUKRS,D.GJAHR) "Sociedad"
+    , KURS2 "TipoCambioUSD"
+    , WAERS AS "MonedaTransaccion"
+    , E.TEXT2 AS "Entrega a refacturar"
+    , C1.VBELN AS "Fc a refacturar"
+    , T.BEZEI AS "Motivo"
+	
+FROM "SAPPRD"."VBRK" A
+	LEFT JOIN "SAPPRD"."BKPF" B
+		-- ON A.FKDAT = B.BLDAT
+		ON 	B.AWTYP = 'VBRK'
+			AND A.VBELN = B.AWKEY
+	LEFT JOIN 
+		(SELECT DISTINCT  VBELN, VBELV , "MANDT", VBTYP_V
+			FROM "SAPPRD"."VBFA"
+			WHERE  "VBTYP_V" = 'M'
+				) C
+		ON B.AWKEY = C."VBELN"
+	LEFT JOIN
+		(SELECT DISTINCT 
+				BUKRS,
+				BELNR,
+				GJAHR
+		FROM "SAPPRD"."BKPF" WHERE MANDT = 300) D
+	ON C.VBELV = D.BELNR
+
+	LEFT JOIN "SAPPRD"."EIKP" E
+	ON E.REFNR = A.VBELN
+	
+	LEFT JOIN
+		(SELECT  DISTINCT  VBELN, VBELV 
+			FROM "SAPPRD"."VBFA"
+			WHERE  "VBTYP_N" = 'M'
+				) C1
+	 ON   C1.VBELV = E.TEXT2    -- donde VBELV es = a Entrega a Refacturar 
+
+	LEFT JOIN 
+		(SELECT DISTINCT  VGBEL,DSC1.AUGRU ,DSC2.BEZEI
+			FROM "SAPPRD"."VBAK" DSC1
+			LEFT JOIN "SAPPRD"."TVAUT" DSC2
+			ON DSC1.AUGRU = DSC2.AUGRU
+			WHERE SPRAS = 'S'
+			) T
+	ON C1.VBELN  = T.VGBEL
+
+WHERE 1=1
+AND COALESCE(B.BELNR,C.VBELV) IS NOT NULL

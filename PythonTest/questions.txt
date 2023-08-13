@@ -1,0 +1,13 @@
+¡Entendido! Aquí tienes una evaluación más práctica que combina los temas que discutimos anteriormente:
+
+1. Escribe un código en Python que tome una lista de números y devuelva una nueva lista que contenga solo los números pares.
+
+2. Escribe una función en Python llamada `divisibles_por_n` que tome una lista de números y un número `n` como parámetros, y devuelva una nueva lista que contenga solo los números de la lista original que sean divisibles por `n`.
+
+3. Escribe un código en Python que lea el contenido de un archivo de texto llamado "datos.txt" y cuente la cantidad de líneas que contiene.
+
+4. Implementa una clase en Python llamada `Rectangulo` que tenga atributos de longitud y ancho. La clase debe tener un método llamado `calcular_area` que devuelva el área del rectángulo.
+
+5. Escribe un código en Python que maneje una excepción de división por cero. El código debe solicitar al usuario que ingrese dos números y realizar la división. Si el denominador es cero, se debe capturar la excepción y mostrar un mensaje de error.
+
+Por favor, proporciona tus respuestas o el código correspondiente a cada pregunta. Estaré encantado de evaluar tus respuestas y brindarte retroalimentación sobre tus habilidades en Python.
